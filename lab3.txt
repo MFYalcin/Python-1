@@ -1,0 +1,145 @@
+ECOR 1041 Lab 3 Solution Template
+
+Author and Student Number: Muhammet Furkan Yalcin - 101233944
+
+This file is to be used in conjunction with the detailed lab description for Lab 3.
+Use this file to enter your answers to the series of exercises you will complete.
+
+==========
+Exercise 1  (.../25)
+
+What is the name of the frame containing variable "area_of_disk"?
+- Frames -> Global frame 
+
+What does variable "area_of_disk" refer to?
+- 'area_of_disk' is the function call 
+
+What is the name of the frame containing parameter "radius"?
+- Objects -> Function -> area_of_disk(radius)
+
+When does the frame containing parameter radius appear in the memory diagram?
+- Parameter radius appears third in the Frames and it is seen after the execution of 'def area_of_disk(radius)' ,basically a part of header.
+
+
+What is the type and value of the variable "radius"? Where did that value come from?
+- 'radius' is the parameter of the function and its value is 7.0(float). 
+The value of radius is signed to 7.0 as argument for testing purpose after the return statement
+
+How does PyTutor depict the value the function will return?
+- After the definition of the function is made, and also when return statement is relatable to definition,
+ Pytutor shows users to see the statements in order and within the global frame as red colored 'Return value'
+
+When does the frame containing "radius" disappear?
+- It disappears after the function call in 'Done running' step since it is an argument now, it is also Step(6/6).
+
+What is the name of the frame containing the variable "area"?
+- Global frame
+
+When does "area" appear in the frame?
+- It is seen in the 'Done running (6 steps)', and since the 'area' is function call, it appears after the return statement
+
+What is the type and value of "area"? Where did that value come from?
+- 'area' is equal to a function call and its value is 153.938 as float. This value comes from the return statement
+
+==========
+Exercise 2 (.../10) 
+
+What value does "area_of_disk" return each time it is called?
+- For this question, the answer would always be 153.938 since the function call and its argument exist and are not changed.
+
+==========
+Exercise 3 (.../25)
+
+What is the name of the frame containing parameters "inner" and "outer"?
+- Global frame -> area_of_ring
+
+When does the frame appear in the memory diagram?
+- In the step 2 of 13 by Global frame -> math(module instance), also they are part of the header as parameters and,
+ they appear after the execution of 'def area_of_ring(outer,inner):'
+
+What are the types and values of the variables "inner" and "outer"? 
+- 'inner' and 'outer' are parameters of the area_of_ring and their values are in the function calls which are 14.0 and 7.0
+
+What caused those values to be bound to "inner" and "outer"?
+- There are 2 arguments given in the code and the parameters are given as 'inner' and 'outer', so they are matched.
+
+What is the name of the frame containing parameter "radius"? 
+- Objects -> area_of_disk(radius)
+
+When does that frame appear in the memory diagram? How many times does it appear?
+- In the step 4 of 13 and it appears 3 times. First is shown in the Objects, second is to the radius value and lastly is the return value. 
+
+Each time the frame containing "radius" appears, what is the type and value of
+the object bound to "radius"? 
+- Each type is float and values are 14.0,  615.7522, 7.0, 153.938, 7.0 and 461.8141 in order.
+
+What caused that object to be bound to "radius"?
+- The parameter is radius and whenever an argument is assigned, it is implemented into the argument
+
+When does the frame containing "radius" disappear?
+- In the  step 13 of 13, (area_of_ring) -> outer -> inner -> Return value, and it disappears after the execution of 'def area_of_disk(radius):' basically the header
+
+When does the frame containing "inner" and "outer" disappear?
+- In the 'Done running (13 steps)' 
+Global frame -> math -> area_of_ring -> area_of _disk -> area, it disappears after the execution of 'def area_of_ring(outer,inner):' basically the header again
+
+What is the name of the frame containing the variable "area"? 
+- Gloabal frame
+
+When does "area" appear in the frame?
+- In the very last step again (In the 'Done running (13 steps)' 
+Global frame -> math -> area_of_ring -> area_of _disk -> area), it appears after the return statement of area_of_disk(radius)
+
+What is the type and value of the object bound to "area"? 
+- 'area' is bound to a float and its value is 461.8141
+
+What caused that object to be bound to "area"?
+- 'area' is actually a function call and it is called by its argument.
+
+==========
+Exercise 4 (.../20)
+
+What is the type of the object returned by the function when there is
+no return statement?
+- If there is no 'return' written statement, 
+'None' type statement appears the in the diagram since it is neither a string nor float or anything.
+
+What is the value of the object returned by the function when there is
+no return statement?
+- The value of the function is 'None' still.
+import math
+def area_of_disk(r):
+    math.pi *r**2
+
+area_of_disk(7.0)
+Return value -> None
+
+==========
+Exercise 5 (.../20)
+
+When "square" is called, but before Python executes x = x ** 2, what value is
+bound to parameter "x"? What value is bound to variable "a"?
+- If any of it is called before the x = x ** 2 statement, then the parameter 'x' is not assigned to any value yet,
+and the function call 'a' is not executed yet.
+
+After Python executes x = x ** 2, but before the function returns, what value
+is bound to parameter "x"? What value is bound to variable "a"?
+- When it returns before the function, then the parameter 'x' would be still not assigned since there is no function call,
+but 'a' is assigned to value 4.
+
+In Python code, does assigning a value to a function's parameter change the 
+corresponding function argument?
+- Argument of a function means a different value for parameter.
+if the parameter is already assigned to a value, that would affect the argument and,
+and as long as the argument has its proper function call, then it would be executed accordingly.
+
+def square(x):
+    x = x ** 2
+    
+a = 4
+square(a)
+a = 2
+square(a) -> return value now has changed.
+
+==========
+Last edited: May 12, 2022
